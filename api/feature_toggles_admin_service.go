@@ -19,11 +19,20 @@ type FeatureToggle struct {
 }
 
 type FeatureStrategy struct {
-	ID          string      `json:"id,omitempty"`
-	Name        string      `json:"name"`
-	Constraints []string    `json:"constraints,omitempty"`
-	Parameters  interface{} `json:"parameters,omitempty"`
-	SortOrder   int         `json:"sortOrder"`
+	ID          string               `json:"id,omitempty"`
+	Name        string               `json:"name"`
+	Constraints []StrategyConstraint `json:"constraints,omitempty"`
+	Parameters  interface{}          `json:"parameters,omitempty"`
+	SortOrder   int                  `json:"sortOrder"`
+}
+
+type StrategyConstraint struct {
+	ContextName     string   `json:"contextName"`
+	Operator        string   `json:"operator"`
+	Value           string   `json:"value"`
+	Values          []string `json:"values"`
+	Inverted        bool     `json:"inverted"`
+	CaseInsensitive bool     `json:"caseInsensitive"`
 }
 
 type Variant struct {
