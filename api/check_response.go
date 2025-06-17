@@ -3,7 +3,7 @@ package api
 import (
 	"bytes"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -14,13 +14,13 @@ func CheckResponse(r *http.Response) error {
 		return nil
 	}
 
-	data, err := io.ReadAll(r.Body)
+	data, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		data = []byte(err.Error())
 	}
 	if data == nil {
 		data = []byte("empty")
 	}
-	r.Body = io.NopCloser(bytes.NewBuffer(data)) // Preserve body
+	r.Body = ioutil.NopCloser(bytes.NewBuffer(data)) // Preserve body
 	return fmt.Errorf("%s %s: StatusCode %d, Body: %s", r.Request.Method, r.Request.RequestURI, r.StatusCode, string(data))
 }

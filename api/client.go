@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -117,7 +118,7 @@ func (c *ApiClient) newRequest(path string, method string, opt interface{}) (*ht
 		bodyReader := bytes.NewReader(bodyBytes)
 
 		u.RawQuery = ""
-		req.Body = io.NopCloser(bodyReader)
+		req.Body = ioutil.NopCloser(bodyReader)
 		req.ContentLength = int64(bodyReader.Len())
 		req.Header.Set("Content-Type", "application/json")
 	}
