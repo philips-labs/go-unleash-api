@@ -2,7 +2,7 @@ package api
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -94,7 +94,7 @@ func TestFeatureTogglesService_GetFeatureByName(t *testing.T) {
 func createHttpResponseMock(statusCode int, body string, requestMethod string) *http.Response {
 	return &http.Response{
 		StatusCode: statusCode,
-		Body:       ioutil.NopCloser(bytes.NewReader([]byte(body))),
+		Body:       io.NopCloser(bytes.NewReader([]byte(body))),
 		Request:    &http.Request{Method: requestMethod, RequestURI: "local"},
 	}
 }
