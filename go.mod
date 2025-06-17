@@ -1,4 +1,4 @@
-module github.com/philips-labs/go-unleash-api
+module github.com/philips-labs/go-unleash-api/v2
 
 go 1.15
 
