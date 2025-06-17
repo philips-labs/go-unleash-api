@@ -24,6 +24,7 @@ type FeatureStrategy struct {
 	Constraints []StrategyConstraint `json:"constraints,omitempty"`
 	Parameters  interface{}          `json:"parameters,omitempty"`
 	SortOrder   int                  `json:"sortOrder"`
+	Variants    []Variant            `json:"variants,omitempty"`
 }
 
 type StrategyConstraint struct {

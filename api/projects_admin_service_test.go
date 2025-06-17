@@ -492,7 +492,6 @@ func TestProjectsService_DeleteUserProject(t *testing.T) {
 			}
 			// no additional checks for now as the response has no body.
 			// ref: https://docs.getunleash.io/reference/api/legacy/unleash/admin/features-v2#remove-a-user-from-a-project
-
 		})
 	}
 }
