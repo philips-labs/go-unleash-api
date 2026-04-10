@@ -6,16 +6,17 @@ import (
 )
 
 type FeatureToggle struct {
-	Archived     bool          `json:"archived"`
-	CreatedAt    string        `json:"createdAt,omitempty"`
-	LastSeenAt   string        `json:"lastSeenAt,omitempty"`
-	Description  string        `json:"description"`
-	Name         string        `json:"name"`
-	Project      string        `json:"project"`
-	Stale        bool          `json:"stale"`
-	Type         string        `json:"type"`
-	Environments []Environment `json:"environments"`
-	Variants     []Variant     `json:"variants"`
+	Archived       bool          `json:"archived"`
+	CreatedAt      string        `json:"createdAt,omitempty"`
+	LastSeenAt     string        `json:"lastSeenAt,omitempty"`
+	Description    string        `json:"description"`
+	Name           string        `json:"name"`
+	Project        string        `json:"project"`
+	Stale          bool          `json:"stale"`
+	Type           string        `json:"type"`
+	ImpressionData bool          `json:"impressionData"`
+	Environments   []Environment `json:"environments"`
+	Variants       []Variant     `json:"variants"`
 }
 
 type FeatureStrategy struct {
