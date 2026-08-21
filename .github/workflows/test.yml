@@ -20,7 +20,7 @@ jobs:
     steps:
 
     - name: Set up Go
-      uses: actions/setup-go@be3c94b385c4f180051c996d336f57a34c397495 # v3
+      uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
       with:
         go-version: '1.15'
       id: go
@@ -49,7 +49,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Setup go
-        uses: actions/setup-go@be3c94b385c4f180051c996d336f57a34c397495 # v3
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
         with:
           go-version: ${{ matrix.go }}
       - run: go test ./...
