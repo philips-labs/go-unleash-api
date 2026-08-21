@@ -31,8 +31,8 @@ type FeatureStrategy struct {
 type StrategyConstraint struct {
 	ContextName     string   `json:"contextName"`
 	Operator        string   `json:"operator"`
-	Value           string   `json:"value"`
-	Values          []string `json:"values"`
+	Value           string   `json:"value,omitempty"`
+	Values          []string `json:"values,omitempty"`
 	Inverted        bool     `json:"inverted"`
 	CaseInsensitive bool     `json:"caseInsensitive"`
 }
